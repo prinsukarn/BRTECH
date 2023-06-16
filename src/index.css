@@ -1,13 +1,131 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Poppins', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container-fluid{
+  padding-left: 0rem;
+  padding-right: 0rem;
+  overflow: hidden;
+}
+
+.header{
+  font-family: 'Roboto', sans-serif;
+}
+
+.header .header-top{
+  text-align: end;
+  background-color: #191970;
+  color: white;
+  font-size: 12px;
+}
+
+nav{
+  background-color: white;
+  padding: 2vh 10vh;
+}
+
+.navbar img{
+  padding: 10px 0 10px ;
+  margin-left:4vw ;
+}
+
+.navbar-nav{
+  margin: auto 4vw;
+}
+
+.navbar-nav > li{
+  padding-left:30px;
+  padding-right:30px;
+  font-size: large;
+  font-weight: 600;
+  color: gray;
+}
+
+.footer{
+  margin:0;
+  color: white;
+  background-color: #191970;
+  text-align: center;
+}
+
+.footer .footer-top{
+  padding: 5vh 20vh 10vh;
+  
+}
+
+.footer .social{
+  text-align: left;
+  padding: 2vh 10vh;
+  vertical-align: middle;
+  background-color: rgb(73, 69, 69);
+  border-bottom: 0.1px solid gray;
+}
+
+.footer .social .social-icons{
+  text-align: end;
+}
+
+.footer .social .social-icons svg{
+  display: inline-block;
+  justify-content: space-between;
+  margin: auto 15px;
+}
+
+.footer .about {
+  text-align: left;
+}
+
+.footer .about p{
+  padding-right: 10px;
+  font-size: 15px;
+}
+
+.footer h5{
+  padding: 18px 0;
+  text-align: left;
+  margin: 0;
+}
+
+.footer ul{
+  list-style: none;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+
+.footer ul li{
+  padding: 1vh 0;
+}
+
+.footer .copyright{
+  padding: 2vh;
+  border-top: 0.5px solid white;;
+}
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .footer h5{
+    margin-top :1.5vh;
+  }
+  
+  .footer .footer-top{
+    padding: 3vh 5vh 0 5vh;
+  }
+  
+  .footer .copyright{
+    font-size: x-small;
+  }
+  
+  .footer .social{
+    padding: 10px;
+  }
+  
+  .footer .social .social-icons{
+    text-align: start;
+    margin: 0;
+  }
 }

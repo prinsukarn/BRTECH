@@ -90,6 +90,8 @@ text-align: center;
 
 
 
+
+
 /* Card Component */
 .card{
   align-items: start;
@@ -134,6 +136,49 @@ text-align: center;
   color: #828181;
   margin-bottom: 0;
   font-size: 12px;
+}
+
+/* Contact */
+
+.contact{
+  padding: 10vh 8vw;
+  background-color: #CEDEFF;
+  border: 2px solid gray;;
+}
+
+.contact .contact-body{
+  background-image: url("./assets/img/contactus.jpg");
+  background-repeat: no-repeat;
+  height: auto;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+}
+
+.contact .contact-form{
+  background-color: white;
+  padding: 60px;
+}
+
+.contact .contact-form input, .contact .contact-form textarea{
+  border-radius: 0;
+}
+
+
+.contact .contact-form button{
+  border-radius: 0;
+  margin: 10px 0 0 10px;
+  background-color: #fe5970;
+  border:none;
+}
+
+.contact .contact-form button:hover{
+  background-color: green
+}
+
+.contact .contact-form .form-group
+  {
+    padding: 10px;
 }
 
 /* Footer */
@@ -218,6 +263,14 @@ text-align: center;
   .services .service-head h2{
     font-size: 18px;
   }
+  
+  .contact{
+    padding: 4vh 8vw;
+  }
+  
+  .contact .contact-form{
+    padding: 10px;
+  }
 
   
   .footer h5{
@@ -239,5 +292,11 @@ text-align: center;
   .footer .social .social-icons{
     text-align: start;
     margin: 0;
+  }
+}
+
+@media (max-width: 991px){
+  .contact .contact-body{
+    height: 200px;
   }
 }

@@ -1857,7 +1857,7 @@
       }
     </style>
     <clipPath id="clippath">
-      <rect class="cls-194" x="308.94" y="153.5" width="718.54" height="440.77"/>
+      <rect class="cls-194" x="308.94" y="153.5" width="400" height="400"/>
     </clipPath>
     <radialGradient id="radial-gradient" cx="678.55" cy="410.95" fx="678.55" fy="410.95" r="450.51" gradientTransform="translate(1065.54 -623.47) rotate(90) scale(1.5 1)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#3c48fa"/>

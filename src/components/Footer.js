@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 export const Footer = () => {
   const services = [
     {
@@ -99,9 +101,12 @@ export const Footer = () => {
             all the IT services in a single project. Our team of experienced and
             highly energetic IT specialists help you better build your brand.
           </p>
+          <Button type="submit" variant="primary" size={"lg"}>
+            Contact Us
+          </Button>
         </div>
 
-        <div className="col-lg-3 col-md-6 services">
+        <div className="col-lg-3 col-md-6 footer-services">
           <h5>Services</h5>
           {services.map((item, index) => (
             <div key={index}>

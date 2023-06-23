@@ -2,7 +2,6 @@
 * {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  
 }
 
 .container-fluid{
@@ -18,22 +17,7 @@
   background-color: white;
 }
 
-/* .header .header-top{
-  text-align: end;
-  background-color: #191970;
-  color: #191970;
-  font-size: 12px;
-} */
-
-/* .header .header-top a{
-  text-decoration: none;
-  color: #fe5970;
-  font-size: 14px;
-  font-weight: bold;
-} */
-
 nav{
-  padding: 2vh 10vh;
   -moz-box-shadow: 0 0 3px #ccc;
   -webkit-box-shadow: 0 0 3px #ccc;
   box-shadow: 0 0 14px rgb(0 0 0/10%);
@@ -41,11 +25,11 @@ nav{
 
 .navbar{
   background-color: white;
-  margin:2vh 8vw;     
+  margin: 2vh 8vw;   
+  padding: 0;  
 }
 
 .navbar img{
-  padding: 10px 0 10px ;
   margin-left:4vw ;
 }
 
@@ -53,19 +37,29 @@ nav{
   margin: auto 4vw;
 }
 
-.navbar-nav > li{
-  padding-left:30px;
-  padding-right:30px;
-  font-size: large;
-  font-weight: 600;
-  color: white;
+.navbar a{
+  vertical-align: middle!important;
+  display: inline-flex;
+  color: green!important;
 }
 
-.nav-link{
+.navbar-nav > li{
+  padding: 1em;
+  vertical-align: middle;
+}
+
+.navbar .btn-link, Link{
+  text-decoration: none;
+  font-size: large;
+  font-weight: 600;
   color: red;
 }
 
-.nav-link a{
+.navbar .btn-link:hover{
+  color: green;
+}
+
+.nav-link, .nav-link a{
   text-decoration: none;
   color: red;
 }
@@ -74,12 +68,14 @@ nav{
   color: #191970;
 }
 
-.blog-btn{
+.nav-link .btn-primary{
   background-color: #191970;
+  border: none;
 }
 
-.blog-btn a{
-  color: white;
+.nav-link .btn-primary:hover{
+  background-color: green;
+  border: none;
 }
 
 /* Hero section */
@@ -290,6 +286,18 @@ text-align: center;
 
 /* // Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
+  .navbar {
+    margin: 5px 10px;
+  }
+  
+  .nav-item a, .navbar-nav>li{
+    padding: 0;
+  }
+  
+  .blog-btn{
+    margin-left: 10px;
+  }
+  
   .services{
     padding: 15px;
   }

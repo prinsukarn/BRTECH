@@ -45,14 +45,16 @@ export const Header = (props) => {
       </div> */}
 
       <div className="container-fluid header">
-        <nav className="navbar navbar-expand-lg">
+        <nav className="navbar navbar-expand-lg ">
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
-              <img src={logo} width={200} />
+              <Link to="/">
+                <img src={logo} width={200} />
+              </Link>
             </a>
 
             <button
-              className="navbar-toggler"
+              className="navbar-toggler m-2"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarNav"
@@ -67,30 +69,34 @@ export const Header = (props) => {
               className="collapse navbar-collapse justify-content-end"
               id="navbarNav"
             >
-              <ul className="navbar-nav">
+              <ul className="navbar-nav justify-content-between">
                 <li className="nav-item">
                   <a className="nav-link" aria-current="page" href="#">
-                    Home
+                    <Link to="/">
+                      <button className="btn btn-link">Home</button>
+                    </Link>
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Services
+                    <button className="btn btn-link">Services</button>
+                  </a>
+                </li>
+                <li className="nav-item ">
+                  <a className="nav-link" href="#">
+                    <button className="btn btn-link">About Us</button>
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    About Us
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    <Link to="/contact">Contact</Link>
+                    <Link to="/contact">
+                      <button className="btn btn-link">Contact</button>
+                    </Link>
                   </a>
                 </li>
                 <li className="nav-item blog-btn">
                   <a className="nav-link" href="#">
-                    Blog
+                    <button className="btn btn-primary">Blog</button>
                   </a>
                 </li>
               </ul>

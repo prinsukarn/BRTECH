@@ -1,0 +1,4 @@
+deployment:
+  type: "git"
+  branch: "main" # or "master", depending on your branch
+  remote: "origin"

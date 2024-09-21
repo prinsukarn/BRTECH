@@ -116,7 +116,7 @@ export const Contact = () => {
               ></textarea>
             </div>
 
-            <p>{banner}</p> 
+            <p>{banner}</p>
             <button type="submit" className="btn btn-primary">
               Submit Request
             </button>

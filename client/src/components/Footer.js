@@ -215,7 +215,7 @@ export const Footer = () => {
       </div>
 
       <div className="row copyright">
-        <span>Copyright © 2023 Brownrice Technology</span>
+        <span>Copyright©2024 Brownrice Technology</span>
       </div>
     </div>
   );

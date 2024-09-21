@@ -19,7 +19,7 @@ export const Hero = () => {
               </h3>
             </div>
 
-            <button className="btn btn-danger">Contact Us</button>
+            <button className="btn btn-success">Contact Us</button>
           </div>
 
           <div className="col-md-6 hero-img">

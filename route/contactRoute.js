@@ -1,21 +1,16 @@
-const router = require("express").Router();
+const express = require("express");
+const router = express.Router();
 const nodemailer = require("nodemailer");
 
-router.post("/contact", (req, res) => {
-  let data = req.body;
+router.post("/contact", async (req, res) => {
+  const { name, email, phone, message } = req.body;
 
-  if (
-    data.name.length === 0 ||
-    data.email.length === 0 ||
-    data.phone.length == 0 ||
-    data.message.length === 0
-  ) {
-    return res.json({ msg: "please fill all the fields" });
+  if (!name || !email || !phone || !message) {
+    return res.status(400).json({ msg: "Please fill in all fields" });
   }
 
   let smtpTransporter = nodemailer.createTransport({
     service: "Gmail",
-    port: 465,
     auth: {
       user: process.env.GMAIL_LOGIN,
       pass: process.env.GMAIL_PASSWORD,
@@ -23,29 +18,26 @@ router.post("/contact", (req, res) => {
   });
 
   let mailOptions = {
-    from: data.email,
+    from: email,
     to: process.env.RECIPIENT,
-    subject: `Message from ${data.name}`,
-    html: `<h3>Informations</h3>
-      <ul><li>Name : ${data.name}</li>
-      <li>Email : ${data.email}</li>
-      <li>Phone Number : ${data.phone}</li>
-      </ul>
-      <h3>
-      Message
-      </h3>
-      <p>${data.message}<p>`,
+    subject: `Message from ${name}`,
+    html: `<h3>Contact Details</h3>
+           <ul>
+             <li>Name: ${name}</li>
+             <li>Email: ${email}</li>
+             <li>Phone: ${phone}</li>
+           </ul>
+           <h3>Message</h3>
+           <p>${message}</p>`,
   };
 
-  smtpTransporter.sendMail(mailOptions, (error) => {
-    try {
-      if (error)
-        return res.status(400).json({ msg: "please fill all the fields" });
-      res.status(200).json({ msg: "Thank you for contacting us" });
-    } catch (error) {
-      if (error) return res.status(500).json({ msg: "There is server error" });
-    }
-  });
+  try {
+    await smtpTransporter.sendMail(mailOptions);
+    res.status(200).json({ msg: "Message sent successfully" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ msg: "Error sending message" });
+  }
 });
 
 module.exports = router;

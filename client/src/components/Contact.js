@@ -26,6 +26,18 @@ export const Contact = () => {
 
   const submitForm = async (e) => {
     e.preventDefault();
+
+    // Input validation before making the API request
+    if (
+      name.length === 0 ||
+      email.length === 0 ||
+      phone.length === 0 ||
+      message.length === 0
+    ) {
+      setBanner("Please fill out all fields.");
+      return;
+    }
+
     try {
       let data = {
         name,
@@ -36,23 +48,19 @@ export const Contact = () => {
 
       const res = await axios.post("http://localhost:5000/contact", data);
 
-      if (
-        name.length === 0 ||
-        email.length === 0 ||
-        phone.length === 0 ||
-        message.length === 0
-      ) {
-        setBanner(res.data.msg);
-      } else if (res.status === 200) {
+      if (res.status === 200) {
         setBanner(res.data.msg);
 
         setName("");
         setEmail("");
         setPhone("");
         setMessage("");
+      } else {
+        setBanner("Something went wrong. Please try again later.");
       }
     } catch (error) {
       console.log(error);
+      setBanner("Error submitting the form. Please try again.");
     }
   };
 
@@ -79,7 +87,6 @@ export const Contact = () => {
                 <input
                   type="email"
                   className="form-control"
-                  id="exampleFormControlInput1"
                   placeholder="Email Address"
                   onChange={handleEmail}
                   value={email}
@@ -91,7 +98,6 @@ export const Contact = () => {
                 <input
                   type="tel"
                   className="form-control"
-                  id="exampleFormControlInput1"
                   placeholder="Phone Number"
                   onChange={handlePhone}
                   value={phone}
@@ -100,7 +106,7 @@ export const Contact = () => {
             </div>
 
             <div className="form-group">
-              <label for="exampleFormControlTextarea1">Message</label>
+              <label htmlFor="exampleFormControlTextarea1">Message</label>
               <textarea
                 className="form-control"
                 id="exampleFormControlTextarea1"
@@ -110,7 +116,7 @@ export const Contact = () => {
               ></textarea>
             </div>
 
-            <p>{banner}</p>
+            <p>{banner}</p> 
             <button type="submit" className="btn btn-primary">
               Submit Request
             </button>
